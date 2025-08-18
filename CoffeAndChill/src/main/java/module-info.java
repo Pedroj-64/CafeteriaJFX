@@ -10,6 +10,7 @@ module co.edu.uniquindio.coffeandchill.coffeandchill {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires lombok;
 
     opens co.edu.uniquindio.coffeandchill.coffeandchill to javafx.fxml;
     exports co.edu.uniquindio.coffeandchill.coffeandchill;
