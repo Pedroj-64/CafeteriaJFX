@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@css/product-management-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.coffeandchill.coffeandchill.viewController.ProductManagementViewController">
+    
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <top>
+        <VBox spacing="15" styleClass="container">
+            <Label styleClass="header-label" text="Product Management" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" styleClass="container">
+            <TabPane>
+                <tabs>
+                    <Tab text="Drinks">
+                        <VBox spacing="15" styleClass="container">
+                            <GridPane hgap="10" vgap="10">
+                                <Label styleClass="section-label" text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="txt_drink_name" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                
+                                <Label styleClass="section-label" text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <TextField fx:id="txt_drink_price" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                
+                                <Label styleClass="section-label" text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <ComboBox fx:id="cmb_drink_type" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                
+                                <Button fx:id="btn_add_drink" onAction="#AddDrink" text="Add Drink" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <columnConstraints>
+                           <ColumnConstraints />
+                           <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                        </rowConstraints>
+                            </GridPane>
+                            <ListView fx:id="lst_drinks_management" VBox.vgrow="ALWAYS" />
+                        </VBox>
+                    </Tab>
+                    
+                    <Tab text="Food">
+                        <VBox spacing="15" styleClass="container">
+                            <GridPane hgap="10" vgap="10">
+                                <Label styleClass="section-label" text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="txt_food_name" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                
+                                <Label styleClass="section-label" text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <TextField fx:id="txt_food_price" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                
+                                <Label styleClass="section-label" text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <ComboBox fx:id="cmb_food_type" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                
+                                <Button fx:id="btn_add_food" onAction="#addFood" text="Add Food" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <columnConstraints>
+                           <ColumnConstraints />
+                           <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                        </rowConstraints>
+                            </GridPane>
+                            <ListView fx:id="lst_food_management" VBox.vgrow="ALWAYS" />
+                        </VBox>
+                    </Tab>
+                    
+                    <Tab text="Combos">
+                        <VBox spacing="15" styleClass="container">
+                            <GridPane hgap="10" vgap="10">
+                                <Label styleClass="section-label" text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="txt_combo_name" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                
+                                <Label styleClass="section-label" text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <TextField fx:id="txt_combo_price" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                
+                                <Label styleClass="section-label" text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <ComboBox fx:id="cmb_combo_type" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                
+                                <Label styleClass="section-label" text="Includes:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <VBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <ComboBox fx:id="cmb_combo_drink" promptText="Select Drink" />
+                                    <ComboBox fx:id="cmb_combo_food" promptText="Select Food" />
+                                </VBox>
+                                
+                                <Button fx:id="btn_add_combo" onAction="#addCombo" text="Add Combo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <columnConstraints>
+                           <ColumnConstraints />
+                           <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                        </rowConstraints>
+                            </GridPane>
+                            <ListView fx:id="lst_combos_management" VBox.vgrow="ALWAYS" />
+                        </VBox>
+                    </Tab>
+                </tabs>
+            </TabPane>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER" spacing="15" styleClass="container">
+            <Button fx:id="btn_save" onAction="#saveChanges" prefWidth="150" text="Save Changes" />
+            <Button fx:id="btn_delete" onAction="#deleteSelected" prefWidth="150" text="Delete Selected" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

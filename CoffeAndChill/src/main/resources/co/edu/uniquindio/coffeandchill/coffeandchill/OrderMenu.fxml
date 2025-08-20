@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@css/styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="co.edu.uniquindio.coffeandchill.coffeandchill.viewController.OrderMenuViewController">
+    
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <top>
+        <VBox spacing="15" styleClass="container">
+            <Label styleClass="header-label" text="Coffee &amp; Chill" />
+            <Label styleClass="section-label" text="System Recommendations" />
+            <TextArea fx:id="txt_recommendations" disable="true" prefHeight="100" prefWidth="600" promptText="System recommendations will appear here..." wrapText="true" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" styleClass="container">
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Label styleClass="section-label" text="Customer:" />
+                <ComboBox fx:id="cmb_customers" prefWidth="200" />
+                <Button fx:id="btn_new_order" onAction="#newOrder" text="New Order" />
+            </HBox>
+
+            <HBox spacing="20" VBox.vgrow="ALWAYS">
+                <VBox spacing="10" HBox.hgrow="ALWAYS">
+                    <Label styleClass="section-label" text="Available Menu" />
+                    <TabPane>
+                        <tabs>
+                            <Tab text="Drinks">
+                                <ListView fx:id="lst_drinks" prefHeight="300" />
+                            </Tab>
+                            <Tab text="Food">
+                                <ListView fx:id="lst_food" prefHeight="300" />
+                            </Tab>
+                            <Tab text="Combos">
+                                <ListView fx:id="lst_combos" prefHeight="300" />
+                            </Tab>
+                        </tabs>
+                    </TabPane>
+                </VBox>
+
+                <VBox spacing="10" HBox.hgrow="ALWAYS">
+                    <Label styleClass="section-label" text="Current Order" />
+                    <ListView fx:id="lst_current_order" prefHeight="300" VBox.vgrow="ALWAYS" />
+                    <HBox alignment="CENTER_RIGHT" spacing="10">
+                        <Label styleClass="section-label" text="Total: $" />
+                        <Label fx:id="lbl_total" styleClass="section-label" text="0.00" />
+                    </HBox>
+                </VBox>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="15">
+                <Button fx:id="btn_add" onAction="#addToOrder" prefWidth="150" text="Add to Order" />
+                <Button fx:id="btn_remove" onAction="#removeOrder" prefWidth="150" text="Remove from Order" />
+                <Button fx:id="btn_finish" onAction="#finishOrder" prefWidth="150" text="Finish Order" />
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

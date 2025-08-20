@@ -1,0 +1,76 @@
+.root {
+    -fx-background-color: #F5E6D3;
+    background-color: #F5E6D3;
+}
+
+.header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6B4423;
+    font-size: 24px;
+    font-weight: bold;
+    color: #6B4423;
+}
+
+.section-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #8B593E;
+    font-size: 16px;
+    font-weight: bold;
+    color: #8B593E;
+}
+
+.button {
+    -fx-background-color: #A67B5B;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    background-color: #A67B5B;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover {
+    -fx-background-color: #8B593E;
+    background-color: #8B593E;
+}
+
+.grid-pane {
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+.text-field {
+    -fx-background-color: #FFF8F0;
+    -fx-border-color: #A67B5B;
+    background-color: #FFF8F0;
+    border-color: #A67B5B;
+}
+
+.combo-box {
+    -fx-background-color: #FFF8F0;
+    -fx-border-color: #A67B5B;
+    background-color: #FFF8F0;
+    border-color: #A67B5B;
+}
+
+.list-view {
+    -fx-background-color: #FFF8F0;
+    -fx-border-color: #A67B5B;
+    background-color: #FFF8F0;
+    border-color: #A67B5B;
+}
+
+.container {
+    -fx-background-color: #FFF8F0;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    background-color: #FFF8F0;
+    padding: 15px;
+    border-radius: 5px;
+}

@@ -8,7 +8,7 @@ import lombok.Data;
 public class Menu {
 
     private List<Drink> drinks;
-    private List<Food> food;
+    private List<Food> foods;
     private List<Combo> combos;
 
 }

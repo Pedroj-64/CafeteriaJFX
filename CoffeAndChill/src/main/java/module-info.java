@@ -14,4 +14,12 @@ module co.edu.uniquindio.coffeandchill.coffeandchill {
 
     opens co.edu.uniquindio.coffeandchill.coffeandchill to javafx.fxml;
     exports co.edu.uniquindio.coffeandchill.coffeandchill;
+
+    opens co.edu.uniquindio.coffeandchill.coffeandchill.controller to javafx.fxml;
+    exports co.edu.uniquindio.coffeandchill.coffeandchill.controller;
+
+    opens co.edu.uniquindio.coffeandchill.coffeandchill.viewController to javafx.fxml;
+    exports co.edu.uniquindio.coffeandchill.coffeandchill.viewController;
+
+
 }

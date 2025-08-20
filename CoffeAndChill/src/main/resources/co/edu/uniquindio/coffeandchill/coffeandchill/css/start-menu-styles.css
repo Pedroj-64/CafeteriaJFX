@@ -1,0 +1,47 @@
+.root {
+    -fx-background-color: #F5E6D3;
+    background-color: #F5E6D3;
+}
+
+.header-label {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6B4423;
+    font-size: 36px;
+    font-weight: bold;
+    color: #6B4423;
+}
+
+.menu-button {
+    -fx-background-color: #A67B5B;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-min-width: 200;
+    -fx-min-height: 50;
+    -fx-font-size: 18px;
+    background-color: #A67B5B;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    -fx-background-color: #8B593E;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    background-color: #8B593E;
+    transform: scale(1.05);
+}
+
+.container {
+    -fx-background-color: #FFF8F0;
+    -fx-padding: 30;
+    -fx-spacing: 20;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    background-color: #FFF8F0;
+    padding: 30px;
+    border-radius: 10px;
+}
