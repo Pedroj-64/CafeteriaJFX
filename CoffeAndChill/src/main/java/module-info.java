@@ -1,5 +1,5 @@
 module co.edu.uniquindio.coffeandchill.coffeandchill {
-    requires javafx.controls;
+    requires transitive javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
 
@@ -20,6 +20,12 @@ module co.edu.uniquindio.coffeandchill.coffeandchill {
 
     opens co.edu.uniquindio.coffeandchill.coffeandchill.viewController to javafx.fxml;
     exports co.edu.uniquindio.coffeandchill.coffeandchill.viewController;
+
+    opens co.edu.uniquindio.coffeandchill.coffeandchill.model to javafx.fxml;
+    exports co.edu.uniquindio.coffeandchill.coffeandchill.model;
+
+    opens co.edu.uniquindio.coffeandchill.coffeandchill.model.enumeration to javafx.fxml;
+    exports co.edu.uniquindio.coffeandchill.coffeandchill.model.enumeration;
 
 
 }

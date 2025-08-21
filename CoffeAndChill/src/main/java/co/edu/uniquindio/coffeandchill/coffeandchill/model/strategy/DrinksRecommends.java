@@ -3,26 +3,24 @@ package co.edu.uniquindio.coffeandchill.coffeandchill.model.strategy;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.edu.uniquindio.coffeandchill.coffeandchill.model.Client;
-import co.edu.uniquindio.coffeandchill.coffeandchill.model.CoffeeShop;
-import co.edu.uniquindio.coffeandchill.coffeandchill.model.Drink;
-import co.edu.uniquindio.coffeandchill.coffeandchill.model.Order;
+import co.edu.uniquindio.coffeandchill.coffeandchill.model.*;
 
 public class DrinksRecommends implements RecommendsStrategy {
 
-        /**
-     * Recomienda comidas al cliente según el tipo más frecuente en sus órdenes y el
+    /**
+     * Recomienda bebidas al cliente según el tipo más frecuente en sus órdenes y el
      * menú del CoffeeShop.
      */
+    @Override
     public List<String> recommends(Client client) {
 
         List<Drink> drinkOrdered = new ArrayList<>();
         Drink mostFrequentDrink = null;
         int maxCount = 0;
         for (Order order : client.getOrders()) {
-            for (Object foodItems : order.getItems()) {
-                if (foodItems instanceof Drink) {
-                    drinkOrdered.add((Drink) foodItems);
+            for (Product drinkItems : order.getProducts()) {
+                if (drinkItems instanceof Drink) {
+                    drinkOrdered.add((Drink) drinkItems);
                 }
             }
         }

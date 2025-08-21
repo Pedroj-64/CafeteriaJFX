@@ -9,6 +9,10 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import co.edu.uniquindio.coffeandchill.coffeandchill.model.CoffeeShop;
+import co.edu.uniquindio.coffeandchill.coffeandchill.model.Menu;
 
 public class App extends Application {
 
@@ -16,9 +20,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("login"), 640, 480);
+        initializeCoffeeShop();
+        scene = new Scene(loadFXML("OrderMenu"), 800, 600);
         stage.setScene(scene);
         stage.show();
+        
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -28,6 +34,14 @@ public class App extends Application {
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
+    }
+
+    public static void showAlert(AlertType type, String title, String content) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 
     /**
@@ -87,6 +101,20 @@ public class App extends Application {
         // Redirigir a una nueva escena al cerrar la alerta
         alert.setOnHidden(evt -> loadScene(fxml, width, height));
         alert.show(); // Mostrar la alerta
+    }
+
+    private void initializeCoffeeShop() {
+        CoffeeShop shop = CoffeeShop.getInstance();
+        if (shop.getMenu() == null) {
+            Menu menu = new Menu();
+            menu.setDrinks(new ArrayList<>());
+            menu.setFoods(new ArrayList<>());
+            menu.setCombos(new ArrayList<>());
+            shop.setMenu(menu);
+        }
+        if (shop.getCustomers() == null) {
+            shop.setCustomers(new ArrayList<>());
+        }
     }
 
     public static void main(String[] args) {

@@ -13,7 +13,7 @@ public class CoffeeShop {
     private List<Client> customers;
 
     private CoffeeShop() {
-        
+
     }
 
     public static CoffeeShop getInstance() {
@@ -22,6 +22,5 @@ public class CoffeeShop {
         }
         return instance;
     }
-
 
 }

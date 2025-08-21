@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane stylesheets="@css/start-menu-styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="co.edu.uniquindio.coffeandchill.coffeandchill.viewController.StartMenuViewController">
+<BorderPane stylesheets="@css/start-menu-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.coffeandchill.coffeandchill.viewController.StartMenuViewController">
     
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
@@ -16,7 +16,7 @@
         <VBox alignment="CENTER" spacing="30" styleClass="container">
             <Label styleClass="header-label" text="Coffee &amp; Chill" />
             
-
+            <!-- Main Menu Buttons -->
             <VBox alignment="CENTER" spacing="15">
                 <Button fx:id="btn_order" onAction="#placeOrder" styleClass="menu-button" text="Place Order" />
                 

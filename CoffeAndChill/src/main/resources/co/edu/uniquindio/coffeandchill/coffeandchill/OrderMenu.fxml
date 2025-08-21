@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane stylesheets="@css/styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="co.edu.uniquindio.coffeandchill.coffeandchill.viewController.OrderMenuViewController">
+<BorderPane stylesheets="@css/order-menu-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.coffeandchill.coffeandchill.viewController.OrderMenuViewController">
     
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
@@ -66,6 +66,7 @@
                 <Button fx:id="btn_add" onAction="#addToOrder" prefWidth="150" text="Add to Order" />
                 <Button fx:id="btn_remove" onAction="#removeOrder" prefWidth="150" text="Remove from Order" />
                 <Button fx:id="btn_finish" onAction="#finishOrder" prefWidth="150" text="Finish Order" />
+                <Button fx:id="btn_back" onAction="#goBack" prefWidth="150" text="Back" />
             </HBox>
         </VBox>
     </center>

@@ -17,7 +17,7 @@ public class FoodRecommends implements RecommendsStrategy {
         Food mostFrequentFood = null;
         int maxCount = 0;
         for (Order order : client.getOrders()) {
-            for (Object foodItems : order.getItems()) {
+            for (Product foodItems : order.getProducts()) {
                 if (foodItems instanceof Food) {
                     foodsOrdered.add((Food) foodItems);
                 }

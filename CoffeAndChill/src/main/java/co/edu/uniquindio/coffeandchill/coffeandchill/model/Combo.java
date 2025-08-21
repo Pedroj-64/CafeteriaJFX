@@ -2,15 +2,16 @@ package co.edu.uniquindio.coffeandchill.coffeandchill.model;
 
 import co.edu.uniquindio.coffeandchill.coffeandchill.model.enumeration.ComboType;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
-public class Combo {
+@EqualsAndHashCode(callSuper = false)
+@NoArgsConstructor
+public class Combo extends Product {
 
-    private String name;
-    private String descripcion;
     private Food food;
     private Drink drink;
-    private double price;
     private ComboType type;
 
 }

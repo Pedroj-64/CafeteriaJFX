@@ -1,21 +1,27 @@
 package co.edu.uniquindio.coffeandchill.coffeandchill.model;
 
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
-
 import lombok.Data;
 
 @Data
 public class Order {
 
+    private String id;
+    private Client client;
+    private LocalDateTime orderDate;
     private List<Food> foodItems;
     private List<Drink> drinkItems;
     private List<Combo> comboItems;
-    private List<List<Object>> items = new ArrayList<>();
+    private List<Product> products;
+    private double subTotal;
+    private double discount;
+    private double iva;
+    private double total;
 
     public double calculateSubTotal() {
 
-        double subTotal = 0;
+        subTotal = 0;
 
         for (Food food : foodItems) {
             subTotal += food.getPrice();

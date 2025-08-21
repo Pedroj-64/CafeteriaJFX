@@ -3,11 +3,7 @@ package co.edu.uniquindio.coffeandchill.coffeandchill.model.strategy;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.edu.uniquindio.coffeandchill.coffeandchill.model.Client;
-import co.edu.uniquindio.coffeandchill.coffeandchill.model.CoffeeShop;
-import co.edu.uniquindio.coffeandchill.coffeandchill.model.Combo;
-import co.edu.uniquindio.coffeandchill.coffeandchill.model.Food;
-import co.edu.uniquindio.coffeandchill.coffeandchill.model.Order;
+import co.edu.uniquindio.coffeandchill.coffeandchill.model.*;
 
 public class ComboRecommends implements RecommendsStrategy {
 
@@ -21,9 +17,9 @@ public class ComboRecommends implements RecommendsStrategy {
         Combo mostFrequentCombo = null;
         int maxCount = 0;
         for (Order order : client.getOrders()) {
-            for (Object foodItems : order.getItems()) {
-                if (foodItems instanceof Combo) {
-                    comboOrdered.add((Combo) foodItems);
+            for (Product comboItems : order.getProducts()) {
+                if (comboItems instanceof Combo) {
+                    comboOrdered.add((Combo) comboItems);
                 }
             }
         }

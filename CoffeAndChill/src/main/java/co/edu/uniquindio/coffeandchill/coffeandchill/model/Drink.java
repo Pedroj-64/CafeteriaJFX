@@ -2,13 +2,12 @@ package co.edu.uniquindio.coffeandchill.coffeandchill.model;
 
 import co.edu.uniquindio.coffeandchill.coffeandchill.model.enumeration.DrinksType;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
-public class Drink {
+@EqualsAndHashCode(callSuper = false)
+public class Drink  extends Product {
 
-    private String name;
-    private double price;
-    private String description;
     private DrinksType type;
 
 
